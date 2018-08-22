@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view style=" margin: 40rpx; border: 1rpx solid #eaeaea; background: #ffffff; padding: 20rpx;">
+	<view class="section">
+	  <textarea bindinput="bindTextAreaBlur" maxlength='100' value="{{content}}"/>
+	  <!-- <textarea bindblur="bindTextAreaBlur" maxlength='100' value="{{content}}"/> -->
+	</view>
+</view>
+<view style=" margin: 40rpx;">
+	<button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="toIndex"> 提交 </button>
+</view>

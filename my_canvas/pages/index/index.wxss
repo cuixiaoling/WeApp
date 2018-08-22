@@ -1,0 +1,8 @@
+/**index.wxss**/
+.image-line image{
+	margin-bottom: 30rpx;
+	margin-right: 20rpx;
+}
+.image-line{
+	margin-top: 20rpx;
+}

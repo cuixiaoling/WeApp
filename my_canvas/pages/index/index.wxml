@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<view style=" padding: 20rpx">
+	<canvas canvas-id ="myCanvas"
+	  style="width:100%; height: {{myWidth}}px;"
+	  bindtouchstart="start"
+	  bindtouchmove="move"
+	  bindtouchend="end" 
+	  bindlongtap="toTxt"
+	  disable-scroll="true" 
+	></canvas>
+	<cover-view style="position: absolute; color: #cccccc; font-size: 24rpx; left: {{positionLeft}};top: {{positionTop}}px;width: 120px; margin-left: -40px;" v-if="{{showTi}}">(点击文字可自定义)</cover-view>
+	<view style="display: flex; justify-content: space-between; align-items: flex-start;">
+		<view style="font-size: 36rpx; padding: 20rpx; padding-bottom: 0;">选择卡面</view>
+		<view bindtap="seleceImg">
+			<image src="../../images/item1.png" style="width: 50rpx; height: 50rpx; margin-top: 20rpx; cursor: pointer;"></image>
+		</view>
+	</view>
+	<!-- 图片左右滑动 -->
+	<view style="width: 100%;overflow: hidden;white-space: nowrap;">
+	  <scroll-view scroll-x bindscrolltolower="themeLower" wx-if="{{tabShow}}">
+	      <view class="image-line">
+	        <image style="width: {{myWidth*0.202+'px'}}; height: {{myWidth*0.202+'px'}};" wx:for="{{imageList}}" wx:for-index= "idx" wx:key="idx" src="{{item}}" data-index="{{idx}}" bindtap="chooseImgFun" data-src="{{item}}"></image>
+	      </view>
+	  </scroll-view>
+	</view>
+</view>
+<view style=" margin: 20rpx;" bindtap="createPoasterFun">
+	<button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}"> 确定 </button>
+</view>

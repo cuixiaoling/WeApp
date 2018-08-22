@@ -1,0 +1,7 @@
+<view style="padding: 50px; box-sizing: border-box;">
+	<image src="{{imgSrc}}" style="width:100%; height:{{myWidth}}px" mode="aspectFill"></image>
+</view>
+<view style="display: flex;justify-content: space-between;">
+	<button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="saveFun"> 保存到本地 </button>
+	<button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="toFriend" open-type="share" > 分享给朋友 </button>
+</view>

@@ -1,0 +1,46 @@
+需求：
+1，在图片上，画字
+
+2，字可以随意移动，可选字，可编辑，可以选择自己的图片，放大，缩小字
+
+3，可以生成一张海报
+
+4，分享出去，5:4 
+
+canvas
+
+1， canvas 上画图http、https，需要 downLoad
+2， 微信小程序，不能画圆，画一个中间圆透明的图片，罩在上面
+3， 文字居中 ctx.setTextAlign('center'); 
+	ctx.fillText(content, x, y); x --> app.globalData.windowWidth*0.5 设备宽度的一半
+4， 画字不能换行，需要切下来
+5， 分享出去的图片是 5:4 ， 需要画一张这个图
+6， 画文字的时候，颜色，居中 都需要放在内容的上面
+
+
+全局变量 的应用
+
+缓存
+
+
+灰色：#eaeaea
+主背景色：#efeff4;
+bindblur
+bindinput
+
+bindblur="getLoadPort"
+// 去除多个输入框的级联问题
+// 同时绑一个事件，value值不能相同
+<input bindblur="getLoadPort" data-index="{{idx}}" value="{{loadPortList[idx]}}" placeholder="请输入港口名称" />
+getLoadPort:function(e){
+  let index = e.currentTarget.dataset.index;
+  this.data.loadPortList[index] = e.detail.value;
+  this.setData({
+    loadPortList:this.data.loadPortList
+  })
+},
+
+周二
+
+1，图片上可以编辑的文案的处理
+2，生成大图的二维码，加文案
